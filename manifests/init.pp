@@ -34,6 +34,7 @@
 # [Remember: No empty lines between comments and class definition]
 class ntp($servers='UNSET',
           $ensure='running',
+          $enable='true',
           $autoupdate=false
 ) {
 
@@ -113,6 +114,7 @@ class ntp($servers='UNSET',
   service { 'ntp':
     ensure     => $ensure,
     name       => $svc_name,
+    enable     => $enable,
     hasstatus  => true,
     hasrestart => true,
     subscribe  => [ Package[$pkg_name], File[$config] ],
