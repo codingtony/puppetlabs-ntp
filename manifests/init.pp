@@ -40,7 +40,7 @@
 # [Remember: No empty lines between comments and class definition]
 class ntp($servers='UNSET',
           $ensure='running',
-          $enable='true',
+          $enable=true,
           $restrict=true,
           $autoupdate=false
 ) {
